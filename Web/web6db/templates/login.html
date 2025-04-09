@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login X</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <img src="{{ url_for('static', filename='images/x.jpg') }}" alt="Logo X">
+        </div>
+        <div class="right-panel">
+            <div class="login-box">
+                <h2>Login X</h2>
+                <p>Silahkan Bergabung</p>
+                <form id="loginForm" action="{{ url_for('login') }}" method="post">
+                    <input type="text" name="username" placeholder="Username" required>
+                    <input type="password" name="password" placeholder="Kata Sandi" required>
+                    <button type="submit">Masuk</button>
+                </form>
+                <div class="separator"><span>ATAU</span></div>
+
+                <div class="signup">
+                    Belum punya akun? <a href="#">Buat akun</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function () {
+            let username = getCookie("username") || localStorage.getItem("username");
+            if (username) {
+                document.getElementById("username").value = username;
+            }
+        };
+
+        function getCookie(name) {
+            let cookies = document.cookie.split('; ');
+            for (let cookie of cookies) {
+                let [key, value] = cookie.split('=');
+                if (key === name) return value;
+            }
+            return null;
+        }
+
+        document.getElementById("loginForm").onsubmit = function () {
+            let username = document.getElementById("username").value;
+            localStorage.setItem("username", username);
+        };
+    </script>
+</body>
+
+</html>

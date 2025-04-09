@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #000;
+    color: #e7e9ea;
+    max-width: 600px;
+    margin: 0 auto;
+    border-left: 1px solid #2f3336;
+    border-right: 1px solid #2f3336;
+    min-height: 100vh;
+    position: relative;
+}
+
+.profile-top-bar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    background-color: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #2f3336;
+}
+
+.back-button {
+    margin-right: 32px;
+    cursor: pointer;
+}
+
+.back-button img {
+    width: 24px;
+    height: 24px;
+
+}
+
+.profile-top-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-top-info h1 {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.post-count {
+    font-size: 13px;
+    color: #71767b;
+    margin-top: 2px;
+}
+
+.cover-photo {
+    height: 200px;
+    width: 100%;
+    background-color: #333;
+    background-size: cover;
+    background-position: center;
+}
+
+.profile-header {
+    padding: 16px;
+    position: relative;
+}
+
+.profile-picture {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 4px solid #000;
+    overflow: hidden;
+    position: absolute;
+    top: -40px;
+    left: 16px;
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.edit-profile-btn {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    background: transparent;
+    color: white;
+    border: 1px solid #536471;
+    border-radius: 20px;
+    padding: 6px 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.profile-stats {
+    display: flex;
+    gap: 20px;
+    margin-top: 12px;
+    color: #71767b;
+    font-size: 14px;
+}
+
+.profile-info {
+    padding: 16px;
+    border-bottom: 1px solid #2f3336;
+    margin-top: 10px;
+}
+
+.username {
+    color: #71767b;
+    margin-top: 4px;
+}
+
+.bio {
+    color: #ffffff;
+    margin-top: 4px;
+}
+
+.follow-stats {
+    display: flex;
+    gap: 20px;
+    margin-top: 16px;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.following-link {
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.following-link:hover {
+    text-decoration: underline;
+    color: #ffffff;
+}
+
+.tabs {
+    display: flex;
+    border-bottom: 1px solid #2f3336;
+}
+
+.tab {
+    flex: 1;
+    text-align: center;
+    padding: 16px 0;
+    font-size: 15px;
+    color: #71767b;
+    cursor: pointer;
+}
+
+.tab.active {
+    color: white;
+    font-weight: bold;
+    border-bottom: 4px solid #1d9bf0;
+}
+
+.post {
+    padding: 16px;
+    border-bottom: 1px solid #2f3336;
+}
+
+.post-profile-pic {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 12px;
+}
+
+.post-profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.post-header {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.post-user {
+    font-weight: bold;
+}
+
+.post-profile-info {
+    margin-left: -10px;
+
+}
+
+.post-username {
+    color: #71767b;
+}
+
+.post-time {
+    color: #71767b;
+}
+
+.post-content {
+    margin-top: -30px;
+    margin-bottom: 20px;
+    line-height: 1.4;
+    margin-left: 60px;
+}
+
+.logout-button {
+    padding: 10px 24px;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 999px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+
+    /* Tambahan untuk posisi di pojok kiri bawah */
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1000;
+    /* Supaya muncul di atas konten lain */
+}
+
+.logout-button:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.05);
+}

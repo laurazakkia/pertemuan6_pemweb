@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Following</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/following.css') }}">
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="header">
+            <div class="back-button">
+                <a href="/" class="following-link"><img src="{{ url_for('static', filename='images/back.png') }}"
+                        alt="Kembali"></a>
+            </div>
+            <div class="header-info">
+                <h1>{{ user[1] }}</h1>
+                <p>@{{ user[2] }}</p>
+            </div>
+        </div>
+
+        <div class="tabs">
+            <div class="tab active">Following</div>
+            <div class="tab">Follower</div>
+        </div>
+
+        <div class="followers-container">
+            {% if following_users %}
+            {% for user in following_users %}
+            <div class="follower-item">
+                <div class="follower-info">
+                    <div class="follower-avatar">
+                        <img src="{{ url_for('static', filename='images/avattar.jpeg') }}" alt="Profile Picture">
+                    </div>
+                    <div class="follower-details">
+                        <h3>{{ user[0] }}</h3>
+                        <p>@{{ user[1] }}</p>
+                    </div>
+                </div>
+                <button class="follow-btn">Follow</button>
+            </div>
+            {% endfor %}
+            {% else %}
+            <p class="no-following">Belum mengikuti siapa pun.</p>
+            {% endif %}
+        </div>
+
+    </div>
+</body>
+
+</html>
